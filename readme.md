@@ -31,9 +31,18 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [2.1. Browserstack testing](#21-browserstack-testing)
   - [2.2. Deployment](#22-deployment)
 - [3. Issues and Bugs](#3-issues-and-bugs)
+  - [Issue 1: "Cannot Access Django-Admin Panel on Port."](#issue-1-cannot-access-django-admin-panel-on-port)
+  - [Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider\_id.’"](#issue-2-integrityerror-when-adding-social-application-in-django-null-value-in-column-provider_id)
+  - [Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code."](#issue-3-cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive-to-code)
+  - [Issue 4: "Cannot Access Django-Admin Panel on Port."](#issue-4-cannot-access-django-admin-panel-on-port)
+  - [Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."](#issue-5-django-noreversematch-error-for-questions-view-after-google-oauth-sign-in)
+  - [Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."](#issue-6-social-login-expects-to-lead-to-questionshtml-via-django-urlpatterns-instead-leads-to-home-page)
+  - [Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."](#issue-7-django-questionform-in-formspy-not-creating-instance-in-questionshtml)
 - [4. Acknowledgement and credits](#4-acknowledgement-and-credits)
   - [4.1. Coding Languages](#41-coding-languages)
   - [4.2. Frameworks, Libraries and Programs](#42-frameworks-libraries-and-programs)
+    - [4.2.1 Front-end modules](#421-front-end-modules)
+    - [4.2.1 Back-end modules](#421-back-end-modules)
   - [4.3. UX programmes](#43-ux-programmes)
   - [4.4. Deployment and IDE](#44-deployment-and-ide)
   - [4.5. Resources](#45-resources)
@@ -113,7 +122,8 @@ https://www.figma.com/file/jXT4Bi1WXVwYG4daO3Yczi/Portfolio-Project-4?type=desig
 
 All major issues and bugs were documented on StackOverflow, which turns out to be an invaluable learning strategy for debugging.
 
-Issue 1: 
+## Issue 1: "Cannot Access Django-Admin Panel on Port." 
+
 “Cannot Access Django-Admin Panel on Port.” Stack Overflow, https://stackoverflow.com/questions/77465837/cannot-access-django-admin-panel-on-port. Accessed 12 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -124,7 +134,7 @@ Issue 1:
 
 </details>
 
-Issue 2: 
+## Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider_id.’" 
 “IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider_id.’” Stack Overflow, https://stackoverflow.com/questions/77466342/integrityerror-when-adding-social-application-in-django-null-value-in-column-p. Accessed 12 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -135,7 +145,7 @@ Issue 2:
 
 </details>
 
-Issue 3: 
+## Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code." 
 “Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code.” Stack Overflow, https://stackoverflow.com/questions/77427112/cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive. Accessed 12 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -146,7 +156,7 @@ Issue 3:
 
 </details>
 
-Issue 4:
+## Issue 4: "Cannot Access Django-Admin Panel on Port."
 “Cannot Access Django-Admin Panel on Port.” Stack Overflow, https://stackoverflow.com/questions/77465837/cannot-access-django-admin-panel-on-port. Accessed 26 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -157,7 +167,7 @@ Issue 4:
 
 </details>
 
-Issue 5:
+## Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."
 “Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In.” Stack Overflow, https://stackoverflow.com/questions/77547799/django-noreversematch-error-for-questions-view-after-google-oauth-sign-in. Accessed 26 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -168,7 +178,7 @@ Issue 5:
 
 </details>
 
-Issue 6:
+## Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."
 “Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page.” Stack Overflow, https://stackoverflow.com/questions/77634816/social-login-expects-to-lead-to-questions-html-via-django-urlpatterns-instead-l. Accessed 10 Dec. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -179,7 +189,7 @@ Issue 6:
 
 </details>
 
-Issue 7:
+## Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."
 “Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html.” Stack Overflow, https://stackoverflow.com/questions/77704846/django-questionform-in-forms-py-not-creating-instance-in-questions-html. Accessed 25 Dec. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -208,6 +218,18 @@ Issue 7:
  ## 4.2. Frameworks, Libraries and Programs
 
 The following libraries were used to assist with the development of the site:
+
+### 4.2.1 Front-end modules
+
+- [Bootstrap](https://getbootstrap.com/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+- [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+- [JQuery](https://jquery.com/)
+    - jQuery came with Bootstrap to make the navbar responsive.
+- 
+
+### 4.2.1 Back-end modules
 
 - [asgiref](https://pypi.org/project/asgiref/)
     - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
@@ -246,6 +268,8 @@ The following libraries were used to assist with the development of the site:
 
  ## 4.3. UX programmes
 
+- [CodePen](https://codepen.io/)
+    - CodePen is a social development environment for front-end designers and developers. It was used to test and debug code snippets.
 - [Figma](https://www.figma.com/)
     - Figma is a vector graphics editor and prototyping tool which is primarily web-based. This was used to create the wireframes during the design process.
 - [Canva](https://www.canva.com/)
