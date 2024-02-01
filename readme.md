@@ -14,7 +14,7 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 ***
 - [1. Features](#1-features)
   - [1.1. User Posts Questions ](#11-user-posts-questions-)
-    - [1.1.1. Tags ](#111-tags-)
+  - [1.2. Tags ](#12-tags-)
   - [1.2. User Posts Answers ](#12-user-posts-answers-)
   - [1.3. User Upvotes and Downvotes ](#13-user-upvotes-and-downvotes-)
   - [1.4. Toggle Sort content by highest vote vs newest post  ](#14-toggle-sort-content-by-highest-vote-vs-newest-post--)
@@ -23,41 +23,45 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [1.7. Landing Page ](#17-landing-page-)
   - [1.8. Navbar ](#18-navbar-)
   - [1.9. Footer ](#19-footer-)
-  - [1.10. Strategy plane](#110-strategy-plane)
-  - [1.11. Scope plane](#111-scope-plane)
-  - [1.12.  Skeleton plane](#112--skeleton-plane)
-  - [1.13. Surface plane](#113-surface-plane)
-- [2. Automatic Testing and Deployment](#2-automatic-testing-and-deployment)
-  - [2.1. Browserstack testing](#21-browserstack-testing)
-  - [2.2. Deployment](#22-deployment)
-- [3. Issues and Bugs](#3-issues-and-bugs)
-  - [Issue 1: "Cannot Access Django-Admin Panel on Port."](#issue-1-cannot-access-django-admin-panel-on-port)
-- [Expecting to be able to access django admin panel and add social accouunt](#expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
-  - [Error message:](#error-message)
-- [Currently trying to fix with this tutorial](#currently-trying-to-fix-with-this-tutorial)
-- [settings.py and url are likely problem areas](#settingspy-and-url-are-likely-problem-areas)
-  - [Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider\_id.’"](#issue-2-integrityerror-when-adding-social-application-in-django-null-value-in-column-provider_id)
-  - [Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code."](#issue-3-cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive-to-code)
-  - [Issue 4: "Cannot Access Django-Admin Panel on Port."](#issue-4-cannot-access-django-admin-panel-on-port)
-  - [Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."](#issue-5-django-noreversematch-error-for-questions-view-after-google-oauth-sign-in)
-  - [Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."](#issue-6-social-login-expects-to-lead-to-questionshtml-via-django-urlpatterns-instead-leads-to-home-page)
-  - [Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."](#issue-7-django-questionform-in-formspy-not-creating-instance-in-questionshtml)
-- [4. Acknowledgement and credits](#4-acknowledgement-and-credits)
-  - [4.1. Coding Languages](#41-coding-languages)
-  - [4.2. Frameworks, Libraries and Programs](#42-frameworks-libraries-and-programs)
-    - [4.2.1 Front-end modules](#421-front-end-modules)
-    - [4.2.1 Back-end modules](#421-back-end-modules)
-  - [4.4. Deployment and IDE](#44-deployment-and-ide)
-  - [4.3. UX Software](#43-ux-software)
-  - [4.5. Resources](#45-resources)
+- [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
+  - [2.1. Strategy plane](#21-strategy-plane)
+  - [2.2. Scope plane](#22-scope-plane)
+  - [2.3.  Skeleton plane](#23--skeleton-plane)
+  - [2.4. Surface plane](#24-surface-plane)
+- [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
+  - [3.1. Browserstack testing](#31-browserstack-testing)
+  - [3.2. Deployment](#32-deployment)
+- [4. Issues and Bugs](#4-issues-and-bugs)
+  - [4.1. Issue 1: "Cannot Access Django-Admin Panel on Port."](#41-issue-1-cannot-access-django-admin-panel-on-port)
+    - [5. Expecting to be able to access django admin panel and add social accouunt](#5-expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
+    - [5.1. Error message:](#51-error-message)
+    - [6. Currently trying to fix with this tutorial](#6-currently-trying-to-fix-with-this-tutorial)
+    - [7. settings.py and url are likely problem areas](#7-settingspy-and-url-are-likely-problem-areas)
+  - [7.1. Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider\_id.’"](#71-issue-2-integrityerror-when-adding-social-application-in-django-null-value-in-column-provider_id)
+  - [7.2. Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code."](#72-issue-3-cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive-to-code)
+  - [7.3. Issue 4: "Cannot Access Django-Admin Panel on Port."](#73-issue-4-cannot-access-django-admin-panel-on-port)
+  - [7.4. Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."](#74-issue-5-django-noreversematch-error-for-questions-view-after-google-oauth-sign-in)
+  - [7.5. Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."](#75-issue-6-social-login-expects-to-lead-to-questionshtml-via-django-urlpatterns-instead-leads-to-home-page)
+  - [7.6. Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."](#76-issue-7-django-questionform-in-formspy-not-creating-instance-in-questionshtml)
+- [8. Acknowledgement and credits](#8-acknowledgement-and-credits)
+  - [8.1. Coding Languages](#81-coding-languages)
+  - [8.2. Frameworks, Libraries and Programs](#82-frameworks-libraries-and-programs)
+    - [8.2.1. 4.2.1 Front-end modules](#821-421-front-end-modules)
+    - [8.2.2. 4.2.1 Back-end modules](#822-421-back-end-modules)
+  - [8.3. Deployment and IDE](#83-deployment-and-ide)
+  - [8.4. UX Software](#84-ux-software)
+  - [8.5. Resources](#85-resources)
 
 
 
 # 1. Features
 
-## 1.1. User Posts Questions <!-- omit in toc-->
+The following features were implemented, tested and debugged throughout the development process. Many of them are tightly interwoven e.g. Users Post Questions with Tags.
 
-### 1.1.1. Tags <!-- omit in toc-->
+## 1.1. User Posts Questions <!-- omit in toc-->
+Users can post questions, which can be edited and deleted. 
+
+## 1.2. Tags <!-- omit in toc-->
 
 Tags are used throughout the programme. Users can add tags to their questions. Users can also filter for questions by tag.
 
@@ -89,10 +93,10 @@ The landing page provides a brief description of the site and a call to action t
 
 
 
- 2. User Stories reviewed against UX Planes and Manual Testing
+# 2. User Stories reviewed against UX Planes and Manual Testing
 
 
-## 1.10. Strategy plane
+## 2.1. Strategy plane
 
 The user stories are organised by EPICS. They can be summarised here:
 
@@ -100,39 +104,46 @@ https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEY
 
 %%%%%%%%%%%%%%%%%%% INSERT SCREENSHOT %%%%%%%%%%%%%%%%%%%
 
-## 1.11. Scope plane
+## 2.2. Scope plane
 Based on the user stories above, the following features were prioritised which you can see in the [features section](1-features) above.
 
  2.3. Structure plane
 
-## 1.12.  Skeleton plane
-Figma was used to create the wireframes during the design process. The wireframes can be found here:
+## 2.3.  Skeleton plane
+Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
 
 https://www.figma.com/file/jXT4Bi1WXVwYG4daO3Yczi/Portfolio-Project-4?type=design&node-id=0%3A1&mode=design&t=0DTJelaO4PzBf99a-1
 
-## 1.13. Surface plane
+Codepen was used to test and debug code snippets in the front-end using bootstrap and css. The codepen collection can be found here:
+https://codepen.io/collection/jbEjoo
+
+## 2.4. Surface plane
+
+The colour scheme was chosen to be bright and engaging, with a primary colour of dark turqoise.
+
+Root vars were used to make the colour scheme consistent throughout the site with a more.
 
 <details><summary><i>review</i></summary>
 
 </details>
 
-# 2. Automatic Testing and Deployment
+# 3. Automatic Testing and Deployment
 
-## 2.1. Browserstack testing
+## 3.1. Browserstack testing
 
-## 2.2. Deployment
+## 3.2. Deployment
 
-# 3. Issues and Bugs
+# 4. Issues and Bugs
 
 All major issues and bugs were documented on StackOverflow, which turns out to be an invaluable learning strategy for debugging.
 
-## Issue 1: "Cannot Access Django-Admin Panel on Port." 
+## 4.1. Issue 1: "Cannot Access Django-Admin Panel on Port." 
 
 “Cannot Access Django-Admin Panel on Port.” Stack Overflow, https://stackoverflow.com/questions/77465837/cannot-access-django-admin-panel-on-port. Accessed 12 Nov. 2023.
 
 <details><summary><i>issue</i></summary>
 
-# Expecting to be able to access django admin panel and add social accouunt
+### 5. Expecting to be able to access django admin panel and add social accouunt
 
 opening admin panel by adding standard `admin/` extension to local preview port URL. This is expected to lead to classic [django admin panel.](https://www.programink.com/static/img/django-admin-login.png)
 
@@ -142,7 +153,7 @@ the website is otherwise displaying fine.
 
 *A simple google oath signin is currently being implemented.*
 
-## Error message:
+### 5.1. Error message:
 
 ```
 DoesNotExist at /admin/login/
@@ -168,7 +179,7 @@ Server time:	Sat, 11 Nov 2023 15:17:58 +0000
 
 [traceback details in full](https://file.io/haymHM3ANkEI)
 
-# Currently trying to fix with this tutorial
+### 6. Currently trying to fix with this tutorial
 
 “Set up Google Sign-in for Faster Django Login Experience Feat. Tech with Tim.” Akamai DevRel, YouTube Video, 12 Dec. 2022, https://youtu.be/yO6PP0vEOMc?feature=shared&t=1328. Accessed 11 Nov. 2023.
 
@@ -177,7 +188,7 @@ Server time:	Sat, 11 Nov 2023 15:17:58 +0000
 - before that django-admin panel seemed to be working fine
 
 
-# settings.py and url are likely problem areas
+### 7. settings.py and url are likely problem areas
 
 
 installed apps seems ok on [settings.py - can be viewed here in full](https://file.io/HDZjRjk17k3w)
@@ -227,7 +238,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider_id.’" 
+## 7.1. Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider_id.’" 
 “IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider_id.’” Stack Overflow, https://stackoverflow.com/questions/77466342/integrityerror-when-adding-social-application-in-django-null-value-in-column-p. Accessed 12 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -238,7 +249,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code." 
+## 7.2. Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code." 
 “Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code.” Stack Overflow, https://stackoverflow.com/questions/77427112/cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive. Accessed 12 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -249,7 +260,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 4: "Cannot Access Django-Admin Panel on Port."
+## 7.3. Issue 4: "Cannot Access Django-Admin Panel on Port."
 “Cannot Access Django-Admin Panel on Port.” Stack Overflow, https://stackoverflow.com/questions/77465837/cannot-access-django-admin-panel-on-port. Accessed 26 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -260,7 +271,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."
+## 7.4. Issue 5: "Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In."
 “Django NoReverseMatch Error for ‘questions’ View After Google OAuth Sign-In.” Stack Overflow, https://stackoverflow.com/questions/77547799/django-noreversematch-error-for-questions-view-after-google-oauth-sign-in. Accessed 26 Nov. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -271,7 +282,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."
+## 7.5. Issue 6: "Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page."
 “Social Login Expects to Lead to Questions.Html via Django Urlpatterns, Instead Leads to Home Page.” Stack Overflow, https://stackoverflow.com/questions/77634816/social-login-expects-to-lead-to-questions-html-via-django-urlpatterns-instead-l. Accessed 10 Dec. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -282,7 +293,7 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
-## Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."
+## 7.6. Issue 7: "Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html."
 “Django QuestionForm in Forms.Py Not Creating Instance in Questions.Html.” Stack Overflow, https://stackoverflow.com/questions/77704846/django-questionform-in-forms-py-not-creating-instance-in-questions-html. Accessed 25 Dec. 2023.
 
 - <details><summary><i>issue</i></summary>
@@ -293,11 +304,11 @@ This was fixed with an update to settings.py to match the correct site ID:
 
 </details>
 
- # 4. Acknowledgement and credits
+ # 8. Acknowledgement and credits
 
 
 
- ## 4.1. Coding Languages
+ ## 8.1. Coding Languages
 
 - [HTML](https://en.wikipedia.org/wiki/HTML)
     - HTML is the standard markup language for documents designed to be displayed in a web browser.
@@ -308,11 +319,11 @@ This was fixed with an update to settings.py to match the correct site ID:
 - [Python](https://www.python.org/)
     - Python is an interpreted high-level general-purpose programming language.
 
- ## 4.2. Frameworks, Libraries and Programs
+ ## 8.2. Frameworks, Libraries and Programs
 
 The following libraries were used to assist with the development of the site:
 
-### 4.2.1 Front-end modules
+### 8.2.1. 4.2.1 Front-end modules
 
 - [Bootstrap](https://getbootstrap.com/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
@@ -322,7 +333,7 @@ The following libraries were used to assist with the development of the site:
     - jQuery came with Bootstrap to make the navbar responsive.
 - 
 
-### 4.2.1 Back-end modules
+### 8.2.2. 4.2.1 Back-end modules
 
 - [asgiref](https://pypi.org/project/asgiref/)
     - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
@@ -360,7 +371,7 @@ The following libraries were used to assist with the development of the site:
 
 
 
- ## 4.4. Deployment and IDE
+ ## 8.3. Deployment and IDE
 
 - [Heroku](https://www.heroku.com/)
     - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
@@ -376,14 +387,14 @@ The following libraries were used to assist with the development of the site:
     - CodePen is a social development environment for front-end designers and developers. It was used to test and debug code snippets.
 
 
- ## 4.3. UX Software
+ ## 8.4. UX Software
 
 - [Figma](https://www.figma.com/)
     - Figma is a vector graphics editor and prototyping tool which is primarily web-based. This was used to create the wireframes during the design process.
 - [Canva](https://www.canva.com/)
     - Canva is a graphic design platform, used to create social media graphics, presentations, posters, documents and other visual content.
 
- ## 4.5. Resources
+ ## 8.5. Resources
 
 - [StackOverflow](https://stackoverflow.com)
   - Stackoverflow was used to document the bugs
