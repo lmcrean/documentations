@@ -32,6 +32,10 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [2.2. Deployment](#22-deployment)
 - [3. Issues and Bugs](#3-issues-and-bugs)
   - [Issue 1: "Cannot Access Django-Admin Panel on Port."](#issue-1-cannot-access-django-admin-panel-on-port)
+- [Expecting to be able to access django admin panel and add social accouunt](#expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
+  - [Error message:](#error-message)
+- [Currently trying to fix with this tutorial](#currently-trying-to-fix-with-this-tutorial)
+- [settings.py and url are likely problem areas](#settingspy-and-url-are-likely-problem-areas)
   - [Issue 2: "IntegrityError When Adding Social Application in Django: Null Value in Column ‘Provider\_id.’"](#issue-2-integrityerror-when-adding-social-application-in-django-null-value-in-column-provider_id)
   - [Issue 3: "Cannot Delete ‘Forgot Password?’ On Sign in Page. Seems Completely Unresponsive to Code."](#issue-3-cannot-delete-forgot-password-on-sign-in-page-seems-completely-unresponsive-to-code)
   - [Issue 4: "Cannot Access Django-Admin Panel on Port."](#issue-4-cannot-access-django-admin-panel-on-port)
@@ -43,8 +47,8 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [4.2. Frameworks, Libraries and Programs](#42-frameworks-libraries-and-programs)
     - [4.2.1 Front-end modules](#421-front-end-modules)
     - [4.2.1 Back-end modules](#421-back-end-modules)
-  - [4.3. UX programmes](#43-ux-programmes)
   - [4.4. Deployment and IDE](#44-deployment-and-ide)
+  - [4.3. UX Software](#43-ux-software)
   - [4.5. Resources](#45-resources)
 
 
@@ -126,11 +130,100 @@ All major issues and bugs were documented on StackOverflow, which turns out to b
 
 “Cannot Access Django-Admin Panel on Port.” Stack Overflow, https://stackoverflow.com/questions/77465837/cannot-access-django-admin-panel-on-port. Accessed 12 Nov. 2023.
 
-- <details><summary><i>issue</i></summary>
+<details><summary><i>issue</i></summary>
+
+# Expecting to be able to access django admin panel and add social accouunt
+
+opening admin panel by adding standard `admin/` extension to local preview port URL. This is expected to lead to classic [django admin panel.](https://www.programink.com/static/img/django-admin-login.png)
+
+**going to the admin url instead leads to an [error message](https://i.stack.imgur.com/z4v0U.png)**
+
+the website is otherwise displaying fine.
+
+*A simple google oath signin is currently being implemented.*
+
+## Error message:
+
+```
+DoesNotExist at /admin/login/
+Site matching query does not exist.
+Request Method:	GET
+Request URL:	http://8000-lmcrean-project4-avaw7dd1zq8.ws-eu106.gitpod.io/admin/login/?next=/admin/
+Django Version:	3.2.23
+Exception Type:	DoesNotExist
+Exception Value:	
+Site matching query does not exist.
+Exception Location:	/workspace/.pip-modules/lib/python3.9/site-packages/django/db/models/query.py, line 435, in get
+Python Executable:	/home/gitpod/.pyenv/versions/3.9.17/bin/python3
+Python Version:	3.9.17
+Python Path:	
+['/workspace/Project-4',
+ '/home/gitpod/.pyenv/versions/3.9.17/lib/python39.zip',
+ '/home/gitpod/.pyenv/versions/3.9.17/lib/python3.9',
+ '/home/gitpod/.pyenv/versions/3.9.17/lib/python3.9/lib-dynload',
+ '/workspace/.pip-modules/lib/python3.9/site-packages',
+ '/home/gitpod/.pyenv/versions/3.9.17/lib/python3.9/site-packages']
+Server time:	Sat, 11 Nov 2023 15:17:58 +0000
+```
+
+[traceback details in full](https://file.io/haymHM3ANkEI)
+
+# Currently trying to fix with this tutorial
+
+“Set up Google Sign-in for Faster Django Login Experience Feat. Tech with Tim.” Akamai DevRel, YouTube Video, 12 Dec. 2022, https://youtu.be/yO6PP0vEOMc?feature=shared&t=1328. Accessed 11 Nov. 2023.
+
+- have followed correctly with all working up to 22 minutes in
+- migration was recently made after setting up urls, views and templates for google oauth as per the tutorial, there were no obvious issues with this
+- before that django-admin panel seemed to be working fine
+
+
+# settings.py and url are likely problem areas
+
+
+installed apps seems ok on [settings.py - can be viewed here in full](https://file.io/HDZjRjk17k3w)
+
+this was recently implemented but is correct according to tutorial:
+```
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend"
+)
+```
+
+
+urlpatterns in urls.py
+```
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", include("blog.urls"), name="blog-urls"),
+    path('summernote/', include('django_summernote.urls')),
+    path("accounts/", include("allauth.urls")),
+    path("", include("users.urls"))
+]
+```
 
 </details>
 
-- <details><summary><i>solution</i></summary>
+<details><summary><i>solution</i></summary>
+
+The error message "Site matching query does not exist," typically occurs in Django when the SITE_ID setting in settings.py refers to a Site object that does not exist in the database.
+
+I managed to debug this with the Python Shell by checking existing site ID.
+
+    from django.contrib.sites.models import Site
+    existing_site = Site.objects.get(domain='http://127.0.0.1:8000')
+    print(existing_site.id)
+
+The returning statement revealed that the SITE_ID should be 2, not 1 as previously set.
+
+This was fixed with an update to settings.py to match the correct site ID:
+
+    SITE_ID = 2
+
+[The django admin panel can now be accessed][1] without any further errors.
+
+
+[1]: https://i.stack.imgur.com/GY9LK.png
 
 </details>
 
@@ -266,14 +359,6 @@ The following libraries were used to assist with the development of the site:
     - urllib3 is a powerful, sanity-friendly HTTP client for Python.
 
 
- ## 4.3. UX programmes
-
-- [CodePen](https://codepen.io/)
-    - CodePen is a social development environment for front-end designers and developers. It was used to test and debug code snippets.
-- [Figma](https://www.figma.com/)
-    - Figma is a vector graphics editor and prototyping tool which is primarily web-based. This was used to create the wireframes during the design process.
-- [Canva](https://www.canva.com/)
-    - Canva is a graphic design platform, used to create social media graphics, presentations, posters, documents and other visual content.
 
  ## 4.4. Deployment and IDE
 
@@ -287,6 +372,16 @@ The following libraries were used to assist with the development of the site:
   - gitpod is an online IDE for GitHub that provides a complete dev environment with a single click.
 - [Visual Studio Code](https://code.visualstudio.com/)
     - Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS.
+- [CodePen](https://codepen.io/)
+    - CodePen is a social development environment for front-end designers and developers. It was used to test and debug code snippets.
+
+
+ ## 4.3. UX Software
+
+- [Figma](https://www.figma.com/)
+    - Figma is a vector graphics editor and prototyping tool which is primarily web-based. This was used to create the wireframes during the design process.
+- [Canva](https://www.canva.com/)
+    - Canva is a graphic design platform, used to create social media graphics, presentations, posters, documents and other visual content.
 
  ## 4.5. Resources
 
