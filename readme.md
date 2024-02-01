@@ -1,69 +1,85 @@
- Coach Matrix <!-- omit in toc -->
+# Coach Matrix <!-- omit in toc -->
 
-Coach Matrix is a social network for classroom teachers to connect and share knowledge.
+Coach Matrix is an open-source CPD platform for educators to connect and share knowledge.
 
- Table of Contents <!-- omit in toc -->
-
-<b>
-Overview:
-
-Table of contents
-
-- [1. Features](1-features)
-  - [1.1. User Posts Questions ](11-user-posts-questions-)
-  - [1.2. User Posts Answers ](12-user-posts-answers-)
-  - [1.3. User Upvotes and Downvotes ](13-user-upvotes-and-downvotes-)
-  - [1.4. Toggle Sort by highest vote vs newest post ](14-toggle-sort-by-highest-vote-vs-newest-post-)
-  - [1.5. Toggles Views between Compact and Expanded](15-toggles-views-between-compact-and-expanded)
-  - [1.6. Convenient User Authentication with Google and Microsoft ](16-convenient-user-authentication-with-google-and-microsoft-)
-  - [1.7. Landing Page ](17-landing-page-)
-  - [1.8. Navbar ](18-navbar-)
-  - [1.9. Footer ](19-footer-)
-- [2. User Stories reviewed against UX Planes and Manual Testing](2-user-stories-reviewed-against-ux-planes-and-manual-testing)
-  - [Strategy plane](strategy-plane)
-  - [Scope plane](scope-plane)
-  - [Structure plane](structure-plane)
-  - [Skeleton plane](skeleton-plane)
-  - [Surface plane](surface-plane)
-- [3. Automatic Testing](3-automatic-testing)
-- [4. Issues and Bugs](4-issues-and-bugs)
-- [5. Acknowledgement and credits](5-acknowledgement-and-credits)
-  - [5.1. Coding Languages](51-coding-languages)
-  - [5.2. Frameworks, Libraries and Programs](52-frameworks-libraries-and-programs)
-  - [5.3. UX programmes](53-ux-programmes)
-  - [5.4. Deployment and IDE](54-deployment-and-ide)
-  - [5.5. Resources](55-resources)
+## Table of Contents <!-- omit in toc -->
 
 
- 1. Features
+- [1. Features](#1-features)
+- [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
+- [3. Automatic Testing](#3-automatic-testing)
+- [4. Issues and Bugs](#4-issues-and-bugs)
+- [5. Acknowledgement and credits](#5-acknowledgement-and-credits)
 
- 1.1. User Posts Questions <!-- omit in toc-->
-The user posts a tag in their question.
+***
+- [1. Features](#1-features)
+  - [1.1. User Posts Questions ](#11-user-posts-questions-)
+    - [1.1.1. Tags ](#111-tags-)
+  - [1.2. User Posts Answers ](#12-user-posts-answers-)
+  - [1.3. User Upvotes and Downvotes ](#13-user-upvotes-and-downvotes-)
+  - [1.4. Toggle Sort content by highest vote vs newest post  ](#14-toggle-sort-content-by-highest-vote-vs-newest-post--)
+  - [1.5. Toggles Views between Compact and Expanded](#15-toggles-views-between-compact-and-expanded)
+  - [1.6. Convenient User Authentication with Google and Microsoft ](#16-convenient-user-authentication-with-google-and-microsoft-)
+  - [1.7. Landing Page ](#17-landing-page-)
+  - [1.8. Navbar ](#18-navbar-)
+  - [1.9. Footer ](#19-footer-)
+  - [1.10. Strategy plane](#110-strategy-plane)
+  - [1.11. Scope plane](#111-scope-plane)
+  - [1.12.  Skeleton plane](#112--skeleton-plane)
+  - [1.13. Surface plane](#113-surface-plane)
+- [2. Automatic Testing and Deployment](#2-automatic-testing-and-deployment)
+  - [2.1. Browserstack testing](#21-browserstack-testing)
+  - [2.2. Deployment](#22-deployment)
+- [3. Issues and Bugs](#3-issues-and-bugs)
+- [4. Acknowledgement and credits](#4-acknowledgement-and-credits)
+  - [4.1. Coding Languages](#41-coding-languages)
+  - [4.2. Frameworks, Libraries and Programs](#42-frameworks-libraries-and-programs)
+  - [4.3. UX programmes](#43-ux-programmes)
+  - [4.4. Deployment and IDE](#44-deployment-and-ide)
+  - [4.5. Resources](#45-resources)
 
- 1.2. User Posts Answers <!-- omit in toc-->
 
- 1.3. User Upvotes and Downvotes <!-- omit in toc-->
+
+# 1. Features
+
+## 1.1. User Posts Questions <!-- omit in toc-->
+
+### 1.1.1. Tags <!-- omit in toc-->
+
+Tags are used throughout the programme. Users can add tags to their questions. Users can also filter for questions by tag.
+
+##  1.2. User Posts Answers <!-- omit in toc-->
+
+Users can post answers in response to questions, which can be edited and deleted.
+
+##  1.3. User Upvotes and Downvotes <!-- omit in toc-->
 
 Users can upvote and downvote both questions and answers
 
- 1.4. Toggle Sort by highest vote vs newest post <!-- omit in toc-->
+##  1.4. Toggle Sort content by highest vote vs newest post  <!-- omit in toc-->
 
- 1.5. Toggles Views between Compact and Expanded
+The user can toggle between sorting content by highest vote vs newest post. The default is highest vote. This applies to both questions and answers. Answers also provides a toggle to sort by oldest post, so they can get a sense of the narrative.
 
- 1.6. Convenient User Authentication with Google and Microsoft <!-- omit in toc-->
+##  1.5. Toggles Views between Compact and Expanded
 
- 1.7. Landing Page <!-- omit in toc-->
+##  1.6. Convenient User Authentication with Google and Microsoft <!-- omit in toc-->
 
- 1.8. Navbar <!-- omit in toc-->
+##  1.7. Landing Page <!-- omit in toc-->
 
- 1.9. Footer <!-- omit in toc-->
+The landing page provides a brief description of the site and a call to action to sign up. It also provides a link to the questions page. It features appealing animations and a video background.
+
+##  1.8. Navbar <!-- omit in toc-->
+
+
+
+##  1.9. Footer <!-- omit in toc-->
 
 
 
  2. User Stories reviewed against UX Planes and Manual Testing
 
 
- 2.1. Strategy plane
+## 1.10. Strategy plane
 
 The user stories are organised by EPICS. They can be summarised here:
 
@@ -71,25 +87,29 @@ https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEY
 
 %%%%%%%%%%%%%%%%%%% INSERT SCREENSHOT %%%%%%%%%%%%%%%%%%%
 
- 2.2. Scope plane
+## 1.11. Scope plane
 Based on the user stories above, the following features were prioritised which you can see in the [features section](1-features) above.
 
  2.3. Structure plane
 
-2.4  Skeleton plane
+## 1.12.  Skeleton plane
 Figma was used to create the wireframes during the design process. The wireframes can be found here:
 
 https://www.figma.com/file/jXT4Bi1WXVwYG4daO3Yczi/Portfolio-Project-4?type=design&node-id=0%3A1&mode=design&t=0DTJelaO4PzBf99a-1
 
-2.5 Surface plane
+## 1.13. Surface plane
 
 <details><summary><i>review</i></summary>
 
 </details>
 
- 3. Automatic Testing
+# 2. Automatic Testing and Deployment
 
- 4. Issues and Bugs
+## 2.1. Browserstack testing
+
+## 2.2. Deployment
+
+# 3. Issues and Bugs
 
 All major issues and bugs were documented on StackOverflow, which turns out to be an invaluable learning strategy for debugging.
 
@@ -170,11 +190,11 @@ Issue 7:
 
 </details>
 
- 5. Acknowledgement and credits
+ # 4. Acknowledgement and credits
 
 
 
- 5.1. Coding Languages
+ ## 4.1. Coding Languages
 
 - [HTML](https://en.wikipedia.org/wiki/HTML)
     - HTML is the standard markup language for documents designed to be displayed in a web browser.
@@ -185,7 +205,7 @@ Issue 7:
 - [Python](https://www.python.org/)
     - Python is an interpreted high-level general-purpose programming language.
 
- 5.2. Frameworks, Libraries and Programs
+ ## 4.2. Frameworks, Libraries and Programs
 
 The following libraries were used to assist with the development of the site:
 
@@ -224,14 +244,14 @@ The following libraries were used to assist with the development of the site:
     - urllib3 is a powerful, sanity-friendly HTTP client for Python.
 
 
- 5.3. UX programmes
+ ## 4.3. UX programmes
 
 - [Figma](https://www.figma.com/)
     - Figma is a vector graphics editor and prototyping tool which is primarily web-based. This was used to create the wireframes during the design process.
 - [Canva](https://www.canva.com/)
     - Canva is a graphic design platform, used to create social media graphics, presentations, posters, documents and other visual content.
 
- 5.4. Deployment and IDE
+ ## 4.4. Deployment and IDE
 
 - [Heroku](https://www.heroku.com/)
     - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
@@ -244,7 +264,7 @@ The following libraries were used to assist with the development of the site:
 - [Visual Studio Code](https://code.visualstudio.com/)
     - Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS.
 
- 5.5. Resources
+ ## 4.5. Resources
 
 - [StackOverflow](https://stackoverflow.com)
   - Stackoverflow was used to document the bugs
