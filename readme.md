@@ -13,10 +13,10 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 
 ***
 - [1. Features](#1-features)
-  - [1.1. User Posts Questions ](#11-user-posts-questions-)
-  - [1.2. Tags ](#12-tags-)
-  - [1.2. User Posts Answers ](#12-user-posts-answers-)
-  - [1.3. User Upvotes and Downvotes ](#13-user-upvotes-and-downvotes-)
+  - [1.1. User Posts Questions which can be answered and voted ](#11-user-posts-questions-which-can-be-answered-and-voted-)
+  - [1.2. Questions have tags which can be found through the filter view ](#12-questions-have-tags-which-can-be-found-through-the-filter-view-)
+  - [1.2. User Posts Answers to Questions](#12-user-posts-answers-to-questions)
+  - [1.3. User votes for both questions and answers  ](#13-user-votes-for-both-questions-and-answers--)
   - [1.4. Toggle Sort content by highest vote vs newest post  ](#14-toggle-sort-content-by-highest-vote-vs-newest-post--)
   - [1.5. Toggles Views between Compact and Expanded](#15-toggles-views-between-compact-and-expanded)
   - [1.6. Convenient User Authentication with Google and Microsoft ](#16-convenient-user-authentication-with-google-and-microsoft-)
@@ -26,6 +26,10 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 - [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
   - [2.1. Strategy plane](#21-strategy-plane)
   - [2.2. Scope plane](#22-scope-plane)
+  - [2.3. Structure plane](#23-structure-plane)
+    - [2.3.1. Web Structure](#231-web-structure)
+    - [2.3.2.  Database Structure](#232--database-structure)
+    - [2.3.3. File Structure](#233-file-structure)
   - [2.3.  Skeleton plane](#23--skeleton-plane)
   - [2.4. Surface plane](#24-surface-plane)
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
@@ -58,18 +62,18 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 
 The following features were implemented, tested and debugged throughout the development process. Many of them are tightly interwoven e.g. Users Post Questions with Tags.
 
-## 1.1. User Posts Questions <!-- omit in toc-->
+## 1.1. User Posts Questions which can be answered and voted <!-- omit in toc-->
 Users can post questions, which can be edited and deleted. 
 
-## 1.2. Tags <!-- omit in toc-->
+## 1.2. Questions have tags which can be found through the filter view <!-- omit in toc-->
 
 Tags are used throughout the programme. Users can add tags to their questions. Users can also filter for questions by tag.
 
-##  1.2. User Posts Answers <!-- omit in toc-->
+##  1.2. User Posts Answers to Questions<!-- omit in toc-->
 
 Users can post answers in response to questions, which can be edited and deleted.
 
-##  1.3. User Upvotes and Downvotes <!-- omit in toc-->
+##  1.3. User votes for both questions and answers  <!-- omit in toc-->
 
 Users can upvote and downvote both questions and answers
 
@@ -98,7 +102,7 @@ The landing page provides a brief description of the site and a call to action t
 
 ## 2.1. Strategy plane
 
-The user stories are organised by EPICS. They can be summarised here:
+The user stories are organised by EPICS. They can be summarised here. They were tested and debugged throughout the development process.
 
 https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEYFz0/edit?usp=sharing
 
@@ -107,7 +111,33 @@ https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEY
 ## 2.2. Scope plane
 Based on the user stories above, the following features were prioritised which you can see in the [features section](1-features) above.
 
- 2.3. Structure plane
+## 2.3. Structure plane
+
+### 2.3.1. Web Structure
+
+The following web structure was concieved and tested.
+
+$$$$ INSERT TABLE $$$$$
+
+### 2.3.2.  Database Structure
+
+The following database structure was concieved.
+
+$$$$ INSERT SCREENSHOT $$$$$
+
+### 2.3.3. File Structure
+
+File structure was particularly important with this project. The following file structure was concieved.
+
+coach_matrix was the general project folder with important files being:
+- settings.py holding the django settings for the project, such as installed apps and middleware
+- urls.py holding the urls for the project and linking to the main_forum app
+
+main_forum was the django app with important files being:
+- models.py holding the database schema
+- forms.py holding the forms such as asking questions and answering questions
+- views.py holding the views for the questions and answers. This was divided into many separate subdirectories and put together in an init.py file.
+- urls.py holding the urls together within the app
 
 ## 2.3.  Skeleton plane
 Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
