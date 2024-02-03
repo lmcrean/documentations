@@ -139,6 +139,18 @@ main_forum was the django app with important files being:
 - views.py holding the views for the questions and answers. This was divided into many separate subdirectories and put together in an init.py file.
 - urls.py holding the urls together within the app
 
+static was the folder for static files such as css and javascript. This was later hosted on cloudinary for deployment using ```dj3-cloudinary-storage```.
+- CSS had a master css file then a separate css file for each html template
+- JS had a separate js files for each html template
+- data was a folder for json files
+- media was a folder for fonts and images. In some instances media files were delegated to cloudinary URL directly, such as a video background on the login page.
+
+templates was the folder for seperate html templates, some of which were imported from django-allauth
+- base.html was the master template with the head links, navbar and footer. It also linked to the master css file and the js files. It appears on every page.
+- other file names are more self-explanatory such as questions.html and question_detail.html
+
+users was the django app for user authentication with important files being forms.p views.py and urls.py
+
 ## 2.3.  Skeleton plane
 Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
 
@@ -146,6 +158,9 @@ https://www.figma.com/file/jXT4Bi1WXVwYG4daO3Yczi/Portfolio-Project-4?type=desig
 
 Codepen was used to test and debug code snippets in the front-end using bootstrap and css. The codepen collection can be found here:
 https://codepen.io/collection/jbEjoo
+
+Responsivity testing was conducted with looking for overflow issues.
+
 
 ## 2.4. Surface plane
 
@@ -155,13 +170,56 @@ Root vars were used to make the colour scheme consistent throughout the site wit
 
 <details><summary><i>review</i></summary>
 
+
+
 </details>
 
 # 3. Automatic Testing and Deployment
 
 ## 3.1. Browserstack testing
 
+Browserstack was used to test the site on different devices and browsers. The following devices and browsers were tested:
+
+
+
 ## 3.2. Deployment
+
+The site was deployed on Heroku. The following steps were taken to deploy the site:
+
+1. Create a requirements.txt file using the following command in the terminal:
+
+    ```bash
+    pip3 freeze --local > requirements.txt
+    ```
+
+2. Create a Procfile using the following command in the terminal:
+
+    ```bash
+    echo web: gunicorn coach_matrix.wsgi:application > Procfile
+    ```
+
+3. Push the requirements.txt and Procfile to GitHub.
+4. Create a new app on Heroku.
+5. Link the app to the GitHub repository.
+6. Set the following config vars in the Heroku settings:
+
+    ```bash
+    CLOUDINARY_API_KEY
+
+   CLOUDINARY_API_SECRET
+
+   CLOUDINARY_CLOUD_NAME
+
+   CLOUDINARY_URL
+
+   DATABASE_URL
+
+   PORT
+
+   SECRET_KEY
+    ```
+
+7. Deploy the app on Heroku.
 
 # 4. Issues and Bugs
 
