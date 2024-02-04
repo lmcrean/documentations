@@ -25,6 +25,8 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [1.9. Footer ](#19-footer-)
 - [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
   - [2.1. Strategy plane](#21-strategy-plane)
+    - [2.1.1. User Stories](#211-user-stories)
+    - [2.1.2. Agile Methodology](#212-agile-methodology)
   - [2.2. Scope plane](#22-scope-plane)
   - [2.3. Structure plane](#23-structure-plane)
     - [2.3.1. Web Structure](#231-web-structure)
@@ -34,6 +36,7 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [2.4. Surface plane](#24-surface-plane)
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
   - [3.1. Browserstack testing](#31-browserstack-testing)
+  - [3.2. Lighthouse testing](#32-lighthouse-testing)
   - [3.2. Deployment](#32-deployment)
 - [4. Issues and Bugs](#4-issues-and-bugs)
   - [4.1. Issue 1: "Cannot Access Django-Admin Panel on Port."](#41-issue-1-cannot-access-django-admin-panel-on-port)
@@ -102,11 +105,24 @@ The landing page provides a brief description of the site and a call to action t
 
 ## 2.1. Strategy plane
 
-The user stories are organised by EPICS. They can be summarised here. They were tested and debugged throughout the development process.
+### 2.1.1. User Stories
+
+The user stories are organised and reviewed with qualitative data. Initially the user stories were much broader but as the project grew in scale were eventually either 
+
+- slimmed down into more abstract goals.
+- delegated into TRUE/FALSE testing so that the Agile Methodology could be more efficient. 
+
+They were tested and debugged throughout the development process.
+
+User Stories
 
 https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEYFz0/edit?usp=sharing
 
 %%%%%%%%%%%%%%%%%%% INSERT SCREENSHOT %%%%%%%%%%%%%%%%%%%
+
+### 2.1.2. Agile Methodology
+
+The agile methodology was used to develop the project. The following user stories were prioritised and tested.
 
 ## 2.2. Scope plane
 Based on the user stories above, the following features were prioritised which you can see in the [features section](1-features) above.
@@ -179,6 +195,19 @@ Root vars were used to make the colour scheme consistent throughout the site wit
 ## 3.1. Browserstack testing
 
 Browserstack was used to test the site on different devices and browsers. The following devices and browsers were tested:
+
+## 3.2. Lighthouse testing
+
+Lighthouse was used to test the site for performance, accessibility, best practices and SEO. The following scores were achieved:
+
+| page | lightouse score | mobile/desktop | date |
+| --- | --- | --- |
+| landing |  | mobile |  |
+| landing |  | desktop |  |
+| questions |  | mobile |  |
+| questions |  | desktop |  |
+| question detail |  | mobile |  |
+| question detail |  | desktop |  |
 
 
 
