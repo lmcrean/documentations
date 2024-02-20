@@ -18,11 +18,13 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [1.3. User Posts Answers to Questions](#13-user-posts-answers-to-questions)
   - [1.4. User votes for both questions and answers  ](#14-user-votes-for-both-questions-and-answers--)
   - [1.5. Toggle Sort content by highest vote vs newest post  ](#15-toggle-sort-content-by-highest-vote-vs-newest-post--)
-  - [1.6. Toggles Views between Compact and Expanded](#16-toggles-views-between-compact-and-expanded)
-  - [1.7. Convenient User Authentication with Google and Microsoft ](#17-convenient-user-authentication-with-google-and-microsoft-)
-  - [1.8. Landing Page ](#18-landing-page-)
-  - [1.9. Navbar ](#19-navbar-)
-  - [1.10. Footer ](#110-footer-)
+  - [1.6. Convenient User Authentication with Google and Microsoft ](#16-convenient-user-authentication-with-google-and-microsoft-)
+  - [1.7. Landing Page ](#17-landing-page-)
+  - [1.8. Bookmarks ](#18-bookmarks-)
+  - [1.9. Update Profile ](#19-update-profile-)
+  - [1.8. Navbar ](#18-navbar-)
+  - [1.9. Footer ](#19-footer-)
+  - [1.10. About Page ](#110-about-page-)
 - [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
   - [2.1. Strategy plane](#21-strategy-plane)
     - [2.1.1. User Stories](#211-user-stories)
@@ -35,13 +37,21 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
     - [2.3.4. Views](#234-views)
     - [2.3.5. Templates](#235-templates)
     - [2.3.6. URLPatterns](#236-urlpatterns)
-    - [2.3.7. 2.3.10 Static Files](#237-2310-static-files)
+    - [2.3.7. Static Files](#237-static-files)
+    - [2.3.8. JavaScript Front-End Logic](#238-javascript-front-end-logic)
+    - [2.3.9. JSON Data](#239-json-data)
   - [2.4.  Skeleton plane](#24--skeleton-plane)
-  - [2.5. Surface plane](#25-surface-plane)
+  - [2.5. CSS Skeleton Testing](#25-css-skeleton-testing)
+  - [2.6. HTML Bootstrap Testing](#26-html-bootstrap-testing)
+  - [2.7. Surface plane](#27-surface-plane)
+    - [2.7.1. CSS Surface Testing](#271-css-surface-testing)
+    - [2.7.2. FontAwesome](#272-fontawesome)
+    - [2.7.3. Media Surface](#273-media-surface)
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
   - [3.1. Browserstack testing](#31-browserstack-testing)
   - [3.2. Lighthouse testing](#32-lighthouse-testing)
   - [3.3. Deployment](#33-deployment)
+  - [3.4. Automatic Testing in Django](#34-automatic-testing-in-django)
 - [4. Issues and Bugs](#4-issues-and-bugs)
   - [4.1. "Cannot Access Django-Admin Panel on Port."](#41-cannot-access-django-admin-panel-on-port)
   - [4.2. Expecting to be able to access django admin panel and add social accouunt](#42-expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
@@ -64,6 +74,7 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [5.3. Deployment and IDE](#53-deployment-and-ide)
   - [5.4. UX Software](#54-ux-software)
   - [5.5. Resources](#55-resources)
+  - [5.6. Personal Acknowledgements](#56-personal-acknowledgements)
 
 
 
@@ -90,19 +101,40 @@ Users can upvote and downvote both questions and answers
 
 The user can toggle between sorting content by highest vote vs newest post. The default is highest vote. This applies to both questions and answers. Answers also provides a toggle to sort by oldest post, so they can get a sense of the narrative.
 
-##  1.6. Toggles Views between Compact and Expanded
+##  1.6. Convenient User Authentication with Google and Microsoft <!-- omit in toc-->
 
-##  1.7. Convenient User Authentication with Google and Microsoft <!-- omit in toc-->
+##  1.7. Landing Page <!-- omit in toc-->
 
-##  1.8. Landing Page <!-- omit in toc-->
+The landing page provides a brief description of the site and a call to action to sign up. It also provides a link to the questions page. It features appealing animations and a video background. 
 
-The landing page provides a brief description of the site and a call to action to sign up. It also provides a link to the questions page. It features appealing animations and a video background.
+Dynamic Tabs are used to toggle between sign in and sign up.
 
-##  1.9. Navbar <!-- omit in toc-->
+For Accessibility an option to pause the video is provided.
+
+For surface appeal dynamic animations are included, including a custom CSS logo.
+
+## 1.8. Bookmarks <!-- omit in toc-->
+
+The user can bookmark questions. This is particularly useful for questions that the user wants to return to later.
+
+## 1.9. Update Profile <!-- omit in toc-->
+
+The user can update their profile. This includes updating their username and password.
+
+##  1.8. Navbar <!-- omit in toc-->
+
+The navbar provides all the important links to the landing page, questions page, and the user's profile. It also provides a link to sign in and sign out.
+
+A custom CSS Logo is included in the navbar.
 
 
+##  1.9. Footer <!-- omit in toc-->
 
-##  1.10. Footer <!-- omit in toc-->
+The footer provides links to the developer's social media and a link to the developer's portfolio.
+
+## 1.10. About Page <!-- omit in toc-->
+
+The About Page provides a brief description of the site and introduces the developer. It also links to this README and the developer's portfolio.
 
 
 
@@ -272,13 +304,24 @@ $$$$ INSERT SCREENSHOT $$$$$
 | int:pk | passes an integer primary key | int:pk for the question detail view | https://docs.djangoproject.com/en/4.1/topics/http/urls/#path-converters |
 | slug:slug | passes a slug | slug:slug for the question detail view | https://docs.djangoproject.com/en/4.1/topics/http/urls/#path-converters |
 
-### 2.3.7. 2.3.10 Static Files
+### 2.3.7. Static Files
 
 static was the folder for static files such as css and javascript. This was later hosted on `cloudinary` for deployment using ```dj3-cloudinary-storage```.
 - CSS had a master css file then a separate css file for each html template
 - JS had a separate js files for each html template
 - data was a folder for json files
 - media was a folder for fonts and images. In some instances media files were delegated to cloudinary URL directly, such as a video background on the login page.
+
+### 2.3.8. JavaScript Front-End Logic
+
+JavaScript was used to add front-end logic to the site. This was particularly important for the toggle views between compact and expanded. The following methods were used.
+
+static/js/ask_question.js
+static/js/bg-logo.js
+static/js/login.js
+static/js/navbar.js
+
+### 2.3.9. JSON Data
 
 ## 2.4.  Skeleton plane
 Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
@@ -290,16 +333,100 @@ https://codepen.io/collection/jbEjoo
 
 Responsivity testing was conducted with looking for overflow issues.
 
+## 2.5. CSS Skeleton Testing
 
-## 2.5. Surface plane
+The following files were used to test responsivity:
+
+static/css/answercard.css
+static/css/ask_question.css
+static/css/bg-logo.css
+static/css/login.css
+static/css/master.css
+static/css/navbar.css
+static/css/question_detail.css
+static/css/style.css
+static/css/votingcard.css
+
+## 2.6. HTML Bootstrap Testing
+
+Bootstrap was also used throughout the project as an efficient way to use CSS resources.
+
+| bootstrap method | syntax | example | documentation-link for Bootstrap 5.3 |
+| --- | --- | --- | --- |
+| container | `<div class="container">` | container for the questions page | https://getbootstrap.com/docs/5.3/layout/containers/ |
+| row | `<div class="row">` | row for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
+| col | `<div class="col">` | col for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
+| card | `<div class="card">` | card for the questions page | https://getbootstrap.com/docs/5.3/components/card/ |
+| modal | `<div class="modal">` | modal for the questions page | https://getbootstrap.com/docs/5.3/components/modal/ |
+
+
+## 2.7. Surface plane
 
 The colour scheme was chosen to be bright and engaging, with a primary colour of dark turqoise.
 
 Root vars were used to make the colour scheme consistent throughout the site with a more.
 
-<details><summary><i>review</i></summary>
+### 2.7.1. CSS Surface Testing
 
+```css
+:root {
+    /* Primary Color Variations */
+    --primary-color-lightest: #4dd0e1;
+    /* Lightest shade, closer to 'primary-color-dark' */
+    --primary-color-light: #26c6da;
+    /* Light shade, closer to 'primary-color-dark' */
+    --primary-color-medium: #00acc1;
+    /* Medium shade, closer to 'primary-color-dark' */
+    --primary-color-dark: #009693;
+    /* Unchanged, original dark shade */
+    --primary-color-darkest: #00897b;
+    /* Darkest shade, closer to 'primary-color-dark' */
 
+    /* Secondary Color Variations */
+    --secondary-color-lightest: #ffccbc;
+    /* Lightest shade, closer to 'secondary-color-dark' */
+    --secondary-color-light: #ffab91;
+    /* Light shade, closer to 'secondary-color-dark' */
+    --secondary-color-medium: #ff8a65;
+    /* Medium shade, closer to 'secondary-color-dark' */
+    --secondary-color-dark: #f46b17;
+    /* Unchanged, original dark shade */
+    --secondary-color-darkest: #e64a19;
+    /* Darkest shade, closer to 'secondary-color-dark' */
+
+    /* Monochrome Color Variations */
+    --mono-lightest: #cfd8dc;
+    /* Lightest shade, closer to 'mono-dark' */
+    --mono-light: #b0bec5;
+    /* Light shade, closer to 'mono-dark' */
+    --mono-medium: #90a4ae;
+    /* Medium shade, closer to 'mono-dark' */
+    --mono-dark: #737373;
+    /* Unchanged, original dark shade */
+    --mono-darkest: #546e7a;
+    /* Darkest shade, closer to 'mono-dark' */
+}
+```
+
+Animations were also used to make the site more engaging, for example in the landing page.
+
+The logo was also designed by the developer as CSS, as a way to incorperate more dynamic animation on the landing.
+
+### 2.7.2. FontAwesome 
+
+FontAwesome was used to add icons throughout the site including.
+
+- The Navbar.
+- Edit and Delete buttons.
+- Bookmark
+- Flag
+
+### 2.7.3. Media Surface
+
+The media contributed to the surface plane with various vectors and videos.
+
+- the video is a montage of various educational settings, formed from pexels.com and collaged manually using [CapCut](http://capcut.com) and was used for a video background on the landing page.
+- the icons were used from [Canva](http://canva.com)'s vector library permitting educational use. They were used for the voting buttons and the navbar.
 
 </details>
 
@@ -362,6 +489,12 @@ The site was deployed on Heroku. The following steps were taken to deploy the si
     ```
 
 7. Deploy the app on Heroku.
+
+## 3.4. Automatic Testing in Django
+
+The following tests were conducted in Django, as a way to automate testing and debugging.
+
+$$$$$$$$$$$$$$$$
 
 # 4. Issues and Bugs
 
@@ -650,3 +783,11 @@ The following libraries were used to assist with the development of the site:
 - [Implement Google OAuth YouTube Tutorial](https://youtu.be/yO6PP0vEOMc?feature=shared)
     - This tutorial was particularly helpful for implementing Google OAuth. from Tech with Tim.
 
+## 5.6. Personal Acknowledgements
+
+I would like to thank the following people for their support and assistance in the development of this project:
+
+- My mentor, Koko, for her patience and support especially with the testing process and helping me understand Django Views.
+- My family and friends for their support and encouragement throughout the project, it really means the world. Particularly thank you to my Mother for her endless ability to listen to me even when I'm working through something she doesn't understand.
+- My colleagues at Featherstone High School for providing me with endless inspiration and motivation to keep learning and growing.
+- The Code Institute Slack community for their support and assistance throughout the project, particularly a big thank you to Sean Meade for his help with solving the most mysterious Cloudinary bug, eventually realising that the issue was `whitenoise` middleware in `settings.py`.
