@@ -254,7 +254,7 @@ templates was the folder for seperate html templates, some of which were importe
 | csrf_token | adds a csrf token | csrf_token for the questions page | https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#csrf-token |
 | form.as_p | renders a form | form.as_p for the questions page | https://docs.djangoproject.com/en/4.1/ref/forms/api/#django.forms.Form.as_p |
 | crispy | renders a form with crispy forms | crispy for the questions page | https://django-crispy-forms.readthedocs.io/en/latest/ |
-| load socialaccount | loads the social account template | load socialaccount for the questions page | https://rdmo.readthedocs.io/en/latest/configuration/authentication/allauth.html#keycloak-as-a-socialaccount-provider |
+| load socialaccount | loads the social account template | load socialaccount for the questions page | https://rdmo.readthedocs.io/en/latest/configuration/authentication/allauth.html#social-accounts |
 | extra_head | adds extra head content | extra_head for the questions page | https://www.ericholscher.com/blog/2008/nov/20/gentlemans-agreement-django-templates/#block-extra-head |
 
 
