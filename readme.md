@@ -29,9 +29,13 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
     - [2.1.2. Agile Methodology](#212-agile-methodology)
   - [2.2. Scope plane](#22-scope-plane)
   - [2.3. Structure plane](#23-structure-plane)
-    - [2.3.1. Web Structure](#231-web-structure)
-    - [2.3.2.  Database Structure](#232--database-structure)
-    - [2.3.3. File Structure](#233-file-structure)
+    - [2.3.4. App Structure](#234-app-structure)
+    - [2.3.5. Models](#235-models)
+    - [2.3.6. Forms](#236-forms)
+    - [2.3.7. Views](#237-views)
+    - [2.3.8. Templates](#238-templates)
+    - [2.3.9. URLPatterns](#239-urlpatterns)
+    - [2.3.10 Static Files](#2310-static-files)
   - [2.3.  Skeleton plane](#23--skeleton-plane)
   - [2.4. Surface plane](#24-surface-plane)
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
@@ -129,25 +133,17 @@ Based on the user stories above, the following features were prioritised which y
 
 ## 2.3. Structure plane
 
-### 2.3.1. Web Structure
+The structure plane was particularly important with this project and are best summarised through the framework of Django:
 
-The following web structure was concieved and tested.
+### 2.3.4. App Structure
 
-$$$$ INSERT TABLE $$$$$
-
-### 2.3.2.  Database Structure
-
-The following database structure was concieved.
-
-$$$$ INSERT SCREENSHOT $$$$$
-
-### 2.3.3. File Structure
-
-File structure was particularly important with this project. The following file structure was concieved.
+The app structure was particularly important with this project. The following app structure was concieved.
 
 coach_matrix was the general project folder with important files being:
 - settings.py holding the django settings for the project, such as installed apps and middleware
 - urls.py holding the urls for the project and linking to the main_forum app
+
+coach_matrix was the general project folder with important files being settings.py holding the django settings for the project, such as installed apps and middleware and urls.py holding the urls for the project and linking to the main_forum app.
 
 main_forum was the django app with important files being:
 - models.py holding the database schema
@@ -155,17 +151,45 @@ main_forum was the django app with important files being:
 - views.py holding the views for the questions and answers. This was divided into many separate subdirectories and put together in an init.py file.
 - urls.py holding the urls together within the app
 
-static was the folder for static files such as css and javascript. This was later hosted on cloudinary for deployment using ```dj3-cloudinary-storage```.
-- CSS had a master css file then a separate css file for each html template
-- JS had a separate js files for each html template
-- data was a folder for json files
-- media was a folder for fonts and images. In some instances media files were delegated to cloudinary URL directly, such as a video background on the login page.
+main_forum was the django app with important files being models.py holding the database schema, forms.py holding the forms such as asking questions and answering questions, views.py holding the views for the questions and answers. This was divided into many separate subdirectories and put together in an init.py file, urls.py holding the urls together within the app.
+
+users was the django app for user authentication with important files being forms.p views.py and urls.py. It included a user model for updating the profile and sign in functionality.
+
+### 2.3.5. Models
+
+The following diagrams were used to plan the models in `main_forum` and were tested and debugged throughout the development process.
+
+$$$$ INSERT SCREENSHOT $$$$$
+
+### 2.3.6. Forms
+
+The following forms were used.
+
+### 2.3.7. Views
+
+Numerous views were used in main_forum and users and were split into seperate folders.
+
+### 2.3.8. Templates
+
+The following templates were used the hyperlinks were summarised in this diagram.
 
 templates was the folder for seperate html templates, some of which were imported from django-allauth
 - base.html was the master template with the head links, navbar and footer. It also linked to the master css file and the js files. It appears on every page.
 - other file names are more self-explanatory such as questions.html and question_detail.html
 
-users was the django app for user authentication with important files being forms.p views.py and urls.py
+### 2.3.9. URLPatterns
+
+The following URLPatterns were used.
+
+$$$$ INSERT SCREENSHOT $$$$$
+
+### 2.3.10 Static Files
+
+static was the folder for static files such as css and javascript. This was later hosted on `cloudinary` for deployment using ```dj3-cloudinary-storage```.
+- CSS had a master css file then a separate css file for each html template
+- JS had a separate js files for each html template
+- data was a folder for json files
+- media was a folder for fonts and images. In some instances media files were delegated to cloudinary URL directly, such as a video background on the login page.
 
 ## 2.3.  Skeleton plane
 Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
