@@ -22,9 +22,9 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [1.7. Landing Page ](#17-landing-page-)
   - [1.8. Bookmarks ](#18-bookmarks-)
   - [1.9. Update Profile ](#19-update-profile-)
-  - [1.8. Navbar ](#18-navbar-)
-  - [1.9. Footer ](#19-footer-)
-  - [1.10. About Page ](#110-about-page-)
+  - [1.10. Navbar ](#110-navbar-)
+  - [1.11. Footer ](#111-footer-)
+  - [1.12. About Page ](#112-about-page-)
 - [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
   - [2.1. Strategy plane](#21-strategy-plane)
     - [2.1.1. User Stories](#211-user-stories)
@@ -41,12 +41,12 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
     - [2.3.8. JavaScript Front-End Logic](#238-javascript-front-end-logic)
     - [2.3.9. JSON Data](#239-json-data)
   - [2.4.  Skeleton plane](#24--skeleton-plane)
-  - [2.5. CSS Skeleton Testing](#25-css-skeleton-testing)
-  - [2.6. HTML Bootstrap Testing](#26-html-bootstrap-testing)
-  - [2.7. Surface plane](#27-surface-plane)
-    - [2.7.1. CSS Surface Testing](#271-css-surface-testing)
-    - [2.7.2. FontAwesome](#272-fontawesome)
-    - [2.7.3. Media Surface](#273-media-surface)
+    - [2.4.1. CSS Skeleton Testing](#241-css-skeleton-testing)
+    - [2.4.2. HTML Bootstrap Testing](#242-html-bootstrap-testing)
+  - [2.5. Surface plane](#25-surface-plane)
+    - [2.5.1. CSS Surface Testing](#251-css-surface-testing)
+    - [2.5.2. FontAwesome](#252-fontawesome)
+    - [2.5.3. Media Surface Testing](#253-media-surface-testing)
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
   - [3.1. Browserstack testing](#31-browserstack-testing)
   - [3.2. Lighthouse testing](#32-lighthouse-testing)
@@ -121,18 +121,18 @@ The user can bookmark questions. This is particularly useful for questions that 
 
 The user can update their profile. This includes updating their username and password.
 
-##  1.8. Navbar <!-- omit in toc-->
+##  1.10. Navbar <!-- omit in toc-->
 
 The navbar provides all the important links to the landing page, questions page, and the user's profile. It also provides a link to sign in and sign out.
 
 A custom CSS Logo is included in the navbar.
 
 
-##  1.9. Footer <!-- omit in toc-->
+##  1.11. Footer <!-- omit in toc-->
 
 The footer provides links to the developer's social media and a link to the developer's portfolio.
 
-## 1.10. About Page <!-- omit in toc-->
+## 1.12. About Page <!-- omit in toc-->
 
 The About Page provides a brief description of the site and introduces the developer. It also links to this README and the developer's portfolio.
 
@@ -333,7 +333,7 @@ https://codepen.io/collection/jbEjoo
 
 Responsivity testing was conducted with looking for overflow issues.
 
-## 2.5. CSS Skeleton Testing
+### 2.4.1. CSS Skeleton Testing
 
 The following files were used to test responsivity:
 
@@ -347,7 +347,7 @@ static/css/question_detail.css
 static/css/style.css
 static/css/votingcard.css
 
-## 2.6. HTML Bootstrap Testing
+### 2.4.2. HTML Bootstrap Testing
 
 Bootstrap was also used throughout the project as an efficient way to use CSS resources.
 
@@ -360,13 +360,13 @@ Bootstrap was also used throughout the project as an efficient way to use CSS re
 | modal | `<div class="modal">` | modal for the questions page | https://getbootstrap.com/docs/5.3/components/modal/ |
 
 
-## 2.7. Surface plane
+## 2.5. Surface plane
 
 The colour scheme was chosen to be bright and engaging, with a primary colour of dark turqoise.
 
 Root vars were used to make the colour scheme consistent throughout the site with a more.
 
-### 2.7.1. CSS Surface Testing
+### 2.5.1. CSS Surface Testing
 
 ```css
 :root {
@@ -412,7 +412,7 @@ Animations were also used to make the site more engaging, for example in the lan
 
 The logo was also designed by the developer as CSS, as a way to incorperate more dynamic animation on the landing.
 
-### 2.7.2. FontAwesome 
+### 2.5.2. FontAwesome 
 
 FontAwesome was used to add icons throughout the site including.
 
@@ -421,7 +421,7 @@ FontAwesome was used to add icons throughout the site including.
 - Bookmark
 - Flag
 
-### 2.7.3. Media Surface
+### 2.5.3. Media Surface Testing
 
 The media contributed to the surface plane with various vectors and videos.
 
