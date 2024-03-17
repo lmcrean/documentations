@@ -265,6 +265,10 @@ erDiagram
     }
 ```
 
+***
+
+**Methods used:**
+
 | model method | description | example | documentation-link for Django 4.1 |
 | --- | --- | --- | --- |
 | class-based models | models that are classes, these are particularly useful for models that require a lot of methods  | Question | https://docs.djangoproject.com/en/4.1/topics/db/models/ |
@@ -285,7 +289,6 @@ erDiagram
 | ordering | a field that orders the queryset | ordering for the question model | https://docs.djangoproject.com/en/4.1/ref/models/options/#ordering |
 | instance | a method that returns the instance of the object | instance for the question model | https://docs.djangoproject.com/en/4.1/ref/models/instances/#django.db.models.Model.instance |
 
-$$$$ INSERT SCREENSHOT $$$$$
 
 ### 2.3.3. Forms
 
