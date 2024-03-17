@@ -199,21 +199,64 @@ users was the django app for user authentication with important files being form
 
 The following diagrams were used to plan the models in `main_forum` and were tested and debugged throughout the development process.
 
-**Mermaid Diagram 1: simplified User View**
+The Diagrams were divided between User and Question point of view for better readability
+
+**Mermaid Diagram 1: User Point of View**
 Below illustrates the simplified view of the user model. The user can have a profile, ask questions, write answers, bookmark questions and vote on questions and answers.
 
 ```mermaid
 erDiagram
-    User_Simplified ||--o{ UserProfile : "has"
-    User_Simplified ||--o{ question : "can write Many"
-    User_Simplified ||--o{ answer : "can write Many"
-    User_Simplified ||--o{ bookmark : "can write Many, 1 per question"
-    User_Simplified ||--o{ votes : "can write many, 1 per question/answer"
-```
+    User ||--o{ UserProfile : "has"
+    User ||--o{ Question : "can write Many"
+    User ||--o{ Answer : "can write Many"
+    User ||--o{ Bookmark : "can write Many, 1 per question"
+    User ||--o{ Vote : "can write many, 1 per question/answer"
+    Vote ||--o{ Upvote : ""
+    Vote ||--o{ Downvote : ""
 
+
+
+    UserProfile {
+        username string
+    }
+
+        Bookmark {
+        created_at datetime
+    }
+
+    Upvote {
+        upvotedate datetime
+    }
+    Downvote {
+        downvotedate datetime
+    }
+
+    Answer {
+        slug string
+        created_on datetime
+        status int
+        name string
+        email string
+        body text
+        approved boolean
+        answercount int
+        featured_image image
+    }
+
+    Question {
+        subject string
+        created_on datetime
+        status int
+        updated_on datetime
+        content text
+        answercount int
+        views int
+        net_votes int
+    }
+```
 ***
 
-**Mermaid Diagram 2: Questions and Answers**
+**Mermaid Diagram 2: Question Point of View**
 Below illustrates the relationship between questions and answers. A question can have many answers, and both a quesiton and an answer can have many votes.
 
 ```mermaid
@@ -223,12 +266,10 @@ erDiagram
     Question ||--o{ Downvote : "can receive 1 from any User"
     Question ||--o{ Bookmark : "can receive 1 from User (private)"
 
-    Answer ||--o{ Upvote : "receives from any User"
-    Answer ||--o{ Downvote : "receives from any User"
+    Answer ||--o{ Upvote : "can receive 1 from any User"
+    Answer ||--o{ Downvote : "can receive 1 from any User"
 
-    UserProfile {
-        username string
-    }
+
 
     Bookmark {
         created_at datetime
