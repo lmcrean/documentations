@@ -199,7 +199,8 @@ users was the django app for user authentication with important files being form
 
 The following diagrams were used to plan the models in `main_forum` and were tested and debugged throughout the development process.
 
-Mermaid Diagram 1: simplified User View
+**Mermaid Diagram 1: simplified User View**
+Below illustrates the simplified view of the user model. The user can have a profile, ask questions, write answers, bookmark questions and vote on questions and answers.
 
 ```mermaid
 erDiagram
@@ -210,7 +211,10 @@ erDiagram
     User_Simplified ||--o{ votes : "can write many, 1 per question/answer"
 ```
 
-Mermaid Diagram 2: Questions and Answers
+***
+
+**Mermaid Diagram 2: Questions and Answers**
+Below illustrates the relationship between questions and answers. A question can have many answers, and both a quesiton and an answer can have many votes.
 
 ```mermaid
 erDiagram
