@@ -51,8 +51,9 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 - [3. Automatic Testing and Deployment](#3-automatic-testing-and-deployment)
   - [3.1. Browserstack testing](#31-browserstack-testing)
   - [3.2. Lighthouse testing](#32-lighthouse-testing)
-  - [3.3. Deployment](#33-deployment)
-  - [3.4. Automatic Testing in Django](#34-automatic-testing-in-django)
+  - [3.3. Deployment to Heroku](#33-deployment-to-heroku)
+  - [3.4. Deployment from Heroku to coachmatrix.org](#34-deployment-from-heroku-to-coachmatrixorg)
+  - [3.4. Python PEP8 Testing with CI Linter](#34-python-pep8-testing-with-ci-linter)
 - [4. Issues and Bugs](#4-issues-and-bugs)
   - [4.1. "Cannot Access Django-Admin Panel on Port."](#41-cannot-access-django-admin-panel-on-port)
   - [4.2. Expecting to be able to access django admin panel and add social accouunt](#42-expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
@@ -197,6 +198,68 @@ users was the django app for user authentication with important files being form
 ### 2.3.2. Models
 
 The following diagrams were used to plan the models in `main_forum` and were tested and debugged throughout the development process.
+
+Mermaid Diagram 1: simplified User View
+
+```mermaid
+erDiagram
+    User_Simplified ||--o{ UserProfile : "has"
+    User_Simplified ||--o{ question : "can write Many"
+    User_Simplified ||--o{ answer : "can write Many"
+    User_Simplified ||--o{ bookmark : "can write Many, 1 per question"
+    User_Simplified ||--o{ votes : "can write many, 1 per question/answer"
+```
+
+Mermaid Diagram 2: Questions and Answers
+
+```mermaid
+erDiagram
+    Question ||--o{ Answer : "can recieve many from any User"
+    Question ||--o{ Upvote : "can receive 1 from any User"
+    Question ||--o{ Downvote : "can receive 1 from any User"
+    Question ||--o{ Bookmark : "can receive 1 from User (private)"
+
+    Answer ||--o{ Upvote : "receives from any User"
+    Answer ||--o{ Downvote : "receives from any User"
+
+    UserProfile {
+        username string
+    }
+
+    Bookmark {
+        created_at datetime
+    }
+
+    Upvote {
+        upvotedate datetime
+    }
+    Downvote {
+        downvotedate datetime
+    }
+
+    Answer {
+        slug string
+        created_on datetime
+        status int
+        name string
+        email string
+        body text
+        approved boolean
+        answercount int
+        featured_image image
+    }
+
+    Question {
+        subject string
+        created_on datetime
+        status int
+        updated_on datetime
+        content text
+        answercount int
+        views int
+        net_votes int
+    }
+```
 
 | model method | description | example | documentation-link for Django 4.1 |
 | --- | --- | --- | --- |
@@ -479,7 +542,7 @@ Lighthouse was used to test the site for performance, accessibility, best practi
 
 
 
-## 3.3. Deployment
+## 3.3. Deployment to Heroku
 
 The site was deployed on Heroku. The following steps were taken to deploy the site:
 
@@ -518,7 +581,19 @@ The site was deployed on Heroku. The following steps were taken to deploy the si
 
 7. Deploy the app on Heroku.
 
-## 3.4. Automatic Testing in Django
+## 3.4. Deployment from Heroku to coachmatrix.org
+
+The site was deployed on coachmatrix.org. The following steps were taken to deploy the site:
+
+1. aquire the domain from [namecheap](http://namecheap.com)
+2. link the domain to the heroku app using the following DNS settings:
+
+    ```bash
+    CNAME www -> coachmatrix.org.herokudns.com
+    ALIAS @ -> coachmatrix.org.herokudns.com
+    ```
+
+## 3.4. Python PEP8 Testing with CI Linter
 
 The following tests were conducted in Django, as a way to automate testing and debugging.
 
