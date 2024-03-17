@@ -18,17 +18,15 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [1.3. User Posts Answers to Questions](#13-user-posts-answers-to-questions)
   - [1.4. User votes for both questions and answers  ](#14-user-votes-for-both-questions-and-answers--)
   - [1.5. Toggle Sort content by highest vote vs newest post  ](#15-toggle-sort-content-by-highest-vote-vs-newest-post--)
-  - [1.6. Convenient User Authentication with Google and Microsoft ](#16-convenient-user-authentication-with-google-and-microsoft-)
-  - [1.7. Landing Page ](#17-landing-page-)
-  - [1.8. Bookmarks ](#18-bookmarks-)
-  - [1.9. Update Profile ](#19-update-profile-)
+  - [1.7. Landing Page with login and sign up tabs ](#17-landing-page-with-login-and-sign-up-tabs-)
+  - [1.8. User creates, reads and deletes bookmarks. ](#18-user-creates-reads-and-deletes-bookmarks-)
+  - [1.9. User updates Authentication details ](#19-user-updates-authentication-details-)
   - [1.10. Navbar ](#110-navbar-)
   - [1.11. Footer ](#111-footer-)
   - [1.12. About Page ](#112-about-page-)
+  - [1.13. Error Messages ](#113-error-messages-)
 - [2. User Stories reviewed against UX Planes and Manual Testing](#2-user-stories-reviewed-against-ux-planes-and-manual-testing)
   - [2.1. Strategy plane](#21-strategy-plane)
-    - [2.1.1. User Stories](#211-user-stories)
-    - [2.1.2. Agile Methodology](#212-agile-methodology)
   - [2.2. Scope plane](#22-scope-plane)
   - [2.3. Structure plane](#23-structure-plane)
     - [2.3.1. App Structure](#231-app-structure)
@@ -39,11 +37,14 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
     - [2.3.6. URLPatterns](#236-urlpatterns)
     - [2.3.7. Static Files](#237-static-files)
     - [2.3.8. JavaScript Front-End Logic](#238-javascript-front-end-logic)
-    - [2.3.9. JSON Data](#239-json-data)
   - [2.4.  Skeleton plane](#24--skeleton-plane)
+    - [2.4.1. Skeleton Plane Acceptance Criteria](#241-skeleton-plane-acceptance-criteria)
+    - [2.4.1. Early Wireframes using Figma](#241-early-wireframes-using-figma)
+    - [2.4.2. Feature drafting with CodePen](#242-feature-drafting-with-codepen)
     - [2.4.1. CSS Skeleton Testing](#241-css-skeleton-testing)
     - [2.4.2. HTML Bootstrap Testing](#242-html-bootstrap-testing)
   - [2.5. Surface plane](#25-surface-plane)
+    - [2.5.1. Surface Plane acceptance criteria](#251-surface-plane-acceptance-criteria)
     - [2.5.1. CSS Surface Testing](#251-css-surface-testing)
     - [2.5.2. FontAwesome](#252-fontawesome)
     - [2.5.3. Media Surface Testing](#253-media-surface-testing)
@@ -101,9 +102,7 @@ Users can upvote and downvote both questions and answers
 
 The user can toggle between sorting content by highest vote vs newest post. The default is highest vote. This applies to both questions and answers. Answers also provides a toggle to sort by oldest post, so they can get a sense of the narrative.
 
-##  1.6. Convenient User Authentication with Google and Microsoft <!-- omit in toc-->
-
-##  1.7. Landing Page <!-- omit in toc-->
+##  1.7. Landing Page with login and sign up tabs <!-- omit in toc-->
 
 The landing page provides a brief description of the site and a call to action to sign up. It also provides a link to the questions page. It features appealing animations and a video background. 
 
@@ -113,11 +112,11 @@ For Accessibility an option to pause the video is provided.
 
 For surface appeal dynamic animations are included, including a custom CSS logo.
 
-## 1.8. Bookmarks <!-- omit in toc-->
+## 1.8. User creates, reads and deletes bookmarks. <!-- omit in toc-->
 
 The user can bookmark questions. This is particularly useful for questions that the user wants to return to later.
 
-## 1.9. Update Profile <!-- omit in toc-->
+## 1.9. User updates Authentication details <!-- omit in toc-->
 
 The user can update their profile. This includes updating their username and password.
 
@@ -136,45 +135,44 @@ The footer provides links to the developer's social media and a link to the deve
 
 The About Page provides a brief description of the site and introduces the developer. It also links to this README and the developer's portfolio.
 
+## 1.13. Error Messages <!-- omit in toc-->
+
+
+Custom error messages are used to provide feedback to the user.
 
 
 # 2. User Stories reviewed against UX Planes and Manual Testing
 
-
 ## 2.1. Strategy plane
 
-### 2.1.1. User Stories
+The key strategy in this project was to use a Manual Testing Spreadsheet that would establish 
+- the user stories
+- the acceptance criteria that would be used to establish the feature as implemented
+- the validation criteria that would be used to establish the feature as working under "high-stress" conditions e.g. a user trying to break the site.
+- the design criteria that would be used to establish the feature as visually appealing and engaging to the target audience. This was generic for all features.
+- Track Progress using ✅ for TRUE and ❌ for FALSE in the validation criteria.
 
-The user stories are organised and reviewed with qualitative data. Initially the user stories were much broader but as the project grew in scale were eventually either 
+$$$$$$$$$$$$$ SPREADSHEET IMPORTED AS MARKDOWN FILE $$$$$$$$$$$$$$$$$$
 
-- slimmed down into more abstract goals.
-- delegated into TRUE/FALSE testing so that the Agile Methodology could be more efficient. 
-
-They were tested and debugged throughout the development process.
-
-User Stories
-
-https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEYFz0/edit?usp=sharing
-
-%%%%%%%%%%%%%%%%%%% INSERT SCREENSHOT %%%%%%%%%%%%%%%%%%%
-
-### 2.1.2. Agile Methodology
-
-The agile methodology was used to develop the project. The following user stories were prioritised and tested. Todoist was used to manage the project in a similar style to Github Projects. 
-
-As a workflow, a large 1200mm x 900mm whiteboard was used to plan the project. This was divided into 4 sections: Front-End, Front-end Functionality, JSON and Documentation, and Deployment. The whiteboard was used to plan the project and was updated daily, using colour codes to indicate the status of each task.
-
--  blue = planned in sequence
-- red = issues
--  black checkmark = checklist indicating completed or not completed status
--  underlines = in progress, almost completed.
+Discarded strategies included using a Todoist Kanban board and a large 900x1200mm whiteboard with a 3x3 grid. The spreadsheet was chosen as it was both the most efficient way to track progress while also able to carry the most accurate information for the developer.
 
 ## 2.2. Scope plane
+
 Based on the user stories above, the following features were prioritised which you can see in the [features section](1-features) above.
 
 ## 2.3. Structure plane
 
 The structure plane was particularly important with this project and are best summarised through the framework of Django:
+
+Structure contents:
+- [App Structure](#231-app-structure)
+- [Models](#232-models)
+- [Forms](#233-forms)
+- [Views](#234-views)
+- [Templates](#235-templates)
+- [URLPatterns](#236-urlpatterns)
+- [Static Files](#237-static-files)
+- [JavaScript Front-End Logic](#238-javascript-front-end-logic)
 
 ### 2.3.1. App Structure
 
@@ -321,17 +319,37 @@ static/js/bg-logo.js
 static/js/login.js
 static/js/navbar.js
 
-### 2.3.9. JSON Data
-
 ## 2.4.  Skeleton plane
-Figma was used to create the wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
+
+### 2.4.1. Skeleton Plane Acceptance Criteria
+
+THe following criteria was used to test the skeleton plane. You can refer back to the [speadsheet](#21-strategy-plane) in the strategy plane to see the progress of the acceptance criteria against the features.
+
+- The feature can be viewed from 300px to 1920px, without unintended results such as:
+    - unintented text overflowing
+    - unintended overlapping
+    - unintended hidden content
+    - unintended large gaps
+    - unintended text sizing
+
+Where appropriate, the feature is responsive to the screen size, and could split into columns or rows as the screen size decreases. A single column does not fail the acceptance criteria as the site is designed mobile-first,therefore should be responsive to mobile devices.
+
+### 2.4.1. Early Wireframes using Figma
+
+Figma was used to create the early wireframes during the design process, prioritising a mobile-first approach. The wireframes can be found here:
 
 https://www.figma.com/file/jXT4Bi1WXVwYG4daO3Yczi/Portfolio-Project-4?type=design&node-id=0%3A1&mode=design&t=0DTJelaO4PzBf99a-1
 
-Codepen was used to test and debug code snippets in the front-end using bootstrap and css. The codepen collection can be found here:
-https://codepen.io/collection/jbEjoo
+$$$$$$$$$$$$ SCREENSHOT HERE $$$$$$$$$$$$$$$
 
-Responsivity testing was conducted with looking for overflow issues.
+The category feature was omitted from the final design as it was deemed to be too complex. Other omissions included the use of a logo backgrouund and reputation points. These plan to be added in future versions.
+
+### 2.4.2. Feature drafting with CodePen
+
+Codepen was used to draft code snippets in the front-end using bootstrap and css. This platform was chosen for it's efficient interface. 
+
+The codepen collection can be found here:
+https://codepen.io/collection/jbEjoo
 
 ### 2.4.1. CSS Skeleton Testing
 
@@ -351,13 +369,14 @@ static/css/votingcard.css
 
 Bootstrap was also used throughout the project as an efficient way to use CSS resources.
 
-| bootstrap method | syntax | example | documentation-link for Bootstrap 5.3 |
-| --- | --- | --- | --- |
-| container | `<div class="container">` | container for the questions page | https://getbootstrap.com/docs/5.3/layout/containers/ |
-| row | `<div class="row">` | row for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
-| col | `<div class="col">` | col for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
-| card | `<div class="card">` | card for the questions page | https://getbootstrap.com/docs/5.3/components/card/ |
-| modal | `<div class="modal">` | modal for the questions page | https://getbootstrap.com/docs/5.3/components/modal/ |
+| bootstrap method | syntax | description | example | documentation-link for Bootstrap 5.3 |
+| --- | --- | --- | --- | --- |
+| container | `<div class="container">` |  --- |container for the questions page | https://getbootstrap.com/docs/5.3/layout/containers/ |
+| row | `<div class="row">` | --- | row for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
+| col | `<div class="col">` |  --- |col for the questions page | https://getbootstrap.com/docs/5.3/layout/grid/ |
+| card | `<div class="card">` |  --- | card for the questions page | https://getbootstrap.com/docs/5.3/components/card/ |
+| modal | `<div class="modal">` |  --- | modal for the questions page | https://getbootstrap.com/docs/5.3/components/modal/ |
+| d-flex | `<div class="d-flex">` |  --- | d-flex for the questions page | https://getbootstrap.com/docs/5.3/utilities/flex/ |
 
 
 ## 2.5. Surface plane
@@ -365,6 +384,15 @@ Bootstrap was also used throughout the project as an efficient way to use CSS re
 The colour scheme was chosen to be bright and engaging, with a primary colour of dark turqoise.
 
 Root vars were used to make the colour scheme consistent throughout the site with a more.
+
+### 2.5.1. Surface Plane acceptance criteria
+
+The following criteria was used to test the surface plane. You can refer back to the [speadsheet](#21-strategy-plane) in the strategy plane to see the progress of the acceptance criteria against the features.
+
+- The feature is designed with an acceptable colour scheme
+ - consistent colour scheme with primary, secondary and monochrome colours all defined in the root vars
+ - consistent typefaces of Yeseva One and Glacial Indifference
+ - consistent design of buttons
 
 ### 2.5.1. CSS Surface Testing
 
