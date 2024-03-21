@@ -53,7 +53,8 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
   - [3.2. Lighthouse testing](#32-lighthouse-testing)
   - [3.3. Deployment to Heroku](#33-deployment-to-heroku)
   - [3.4. Deployment from Heroku to coachmatrix.org](#34-deployment-from-heroku-to-coachmatrixorg)
-  - [3.4. Python PEP8 Testing with CI Linter](#34-python-pep8-testing-with-ci-linter)
+  - [3.4. Python Validation with PEP8 guidelines](#34-python-validation-with-pep8-guidelines)
+  - [3.5. HTML Validation with W3C guidelines](#35-html-validation-with-w3c-guidelines)
 - [4. Issues and Bugs](#4-issues-and-bugs)
   - [4.1. "Cannot Access Django-Admin Panel on Port."](#41-cannot-access-django-admin-panel-on-port)
   - [4.2. Expecting to be able to access django admin panel and add social accouunt](#42-expecting-to-be-able-to-access-django-admin-panel-and-add-social-accouunt)
@@ -637,16 +638,30 @@ The site was deployed on coachmatrix.org. The following steps were taken to depl
 2. link the domain to the heroku app using the following DNS settings:
 
     ```bash
-    CNAME www -> coachmatrix.org.herokudns.com
-    ALIAS @ -> coachmatrix.org.herokudns.com
+    CNAME www -> [DNS Target from Heroku e.g. coachmatrix.herokuapp.com]
+    ALIAS @ -> [DNS Target from Heroku e.g. coachmatrix.herokuapp.com]
     ```
 
-## 3.4. Python PEP8 Testing with CI Linter
+## 3.4. Python Validation with PEP8 guidelines
 
-The following tests were conducted in Django, as a way to automate testing and debugging.
+All major python models, views and templates were validated through PEP8 style guide on 21st March 2024.
 
-$$$$$$$$$$$$$$$$
+https://pep8ci.herokuapp.com/
 
+The PEP8 style guide ensures that the code is readable and maintainable. Rules include:
+
+- Line length should be less than 79 characters
+- Indentation should be 4 spaces
+- Blank lines should be used to separate functions and classes
+- New lines should be used to separate blocks of code
+- Two spaces should be used before an inline comment
+- No trailing whitespaces at end of code lines
+
+## 3.5. HTML Validation with W3C guidelines
+
+All major HTML templates were validated through W3C HTML validator on 21st March 2024.
+
+https://validator.w3.org/
 # 4. Issues and Bugs
 
 All major issues and bugs were documented on StackOverflow, which turns out to be an invaluable learning strategy for debugging.
