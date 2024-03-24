@@ -72,8 +72,9 @@ Coach Matrix is an open-source CPD platform for educators to connect and share k
 - [5. Acknowledgement and credits](#5-acknowledgement-and-credits)
   - [5.1. Coding Languages](#51-coding-languages)
   - [5.2. Frameworks, Libraries and Programs](#52-frameworks-libraries-and-programs)
-    - [5.2.1. 4.2.1 Front-end modules](#521-421-front-end-modules)
-    - [5.2.2. 4.2.1 Back-end modules](#522-421-back-end-modules)
+    - [5.2.1. Front-end modules](#521-front-end-modules)
+    - [5.2.2. Back-end modules](#522-back-end-modules)
+    - [5.2.3. Large Language Models](#523-large-language-models)
   - [5.3. Deployment and IDE](#53-deployment-and-ide)
   - [5.4. UX Software](#54-ux-software)
   - [5.5. Resources](#55-resources)
@@ -153,6 +154,8 @@ The key strategy in this project was to use a Manual Testing Spreadsheet that wo
 - the validation criteria that would be used to establish the feature as working under "high-stress" conditions e.g. a user trying to break the site.
 - the design criteria that would be used to establish the feature as visually appealing and engaging to the target audience. This was generic for all features.
 - Track Progress using ✅ for TRUE and ❌ for FALSE in the validation criteria.
+
+https://docs.google.com/spreadsheets/d/1tii97g0Q4bVVvkrn_llrX8nOc_N2EyoOecOuMOEYFz0/edit?usp=sharing
 
 $$$$$$$$$$$$$ SPREADSHEET IMPORTED AS MARKDOWN FILE $$$$$$$$$$$$$$$$$$
 
@@ -404,7 +407,7 @@ templates was the folder for seperate html templates, some of which were importe
 
 The following URLPatterns were used.
 
-$$$$ INSERT SCREENSHOT $$$$$
+$$$$ INSERT CODE $$$$$
 
 | urlpattern method | description | example | documentation-link for Django 4.1 |
 | --- | --- | --- | --- |
@@ -858,7 +861,7 @@ profile_update_form does not update field correctly, print logs suggest issue wi
 
 The following libraries were used to assist with the development of the site:
 
-### 5.2.1. 4.2.1 Front-end modules
+### 5.2.1. Front-end modules
 
 - [Bootstrap](https://getbootstrap.com/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
@@ -868,7 +871,7 @@ The following libraries were used to assist with the development of the site:
     - jQuery came with Bootstrap to make the navbar responsive.
 - 
 
-### 5.2.2. 4.2.1 Back-end modules
+### 5.2.2. Back-end modules
 
 - [asgiref](https://pypi.org/project/asgiref/)
     - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
@@ -911,6 +914,15 @@ The following libraries were used to assist with the development of the site:
 - [whitenoise](http://whitenoise.evans.io/en/stable/)
     - Radically simplified static file serving for Python web apps. This was used to serve static files in production.
 
+
+### 5.2.3. Large Language Models
+
+Large Language Models refer to a class of machine learning models that have been trained on vast amounts of text data. These models are capable of generating human-like text.
+
+- [Phind](https://phind.com/)
+    - Phind was used to help with error messages and draft debugging solutions. It's VSCode extension was particularly helpful for reading the codebase efficiently.
+- [GPT-4](https://openai.com/)
+    - GPT-4 was used to help with error messages and draft debugging solutions.
 
 
  ## 5.3. Deployment and IDE
